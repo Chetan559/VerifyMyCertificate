@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Certificate Verification</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Certificate Verification Portal</h1>
+      <p>
+        To verify a certificate, scan the QR code on the certificate or visit:
+      </p>
+      <code
+        >{{ request.url_root }}certificate/verify/&lt;certificate_id&gt;</code
+      >
+    </div>
+  </body>
+</html>

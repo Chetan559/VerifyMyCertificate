@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Verified Certificate</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>✅ Certificate Verified</h1>
+      <p><strong>Certificate ID:</strong> {{ cert.cert_id }}</p>
+      <p><strong>Name:</strong> {{ cert.name }}</p>
+      <p><strong>Enrollment No:</strong> {{ cert.enrollment_no }}</p>
+      <p><strong>Email:</strong> {{ cert.email }}</p>
+      <p><strong>Department:</strong> {{ cert.department }}</p>
+      <p><strong>Batch Year:</strong> {{ cert.batch_year }}</p>
+      <p><strong>Event:</strong> {{ cert.event_name }}</p>
+      <p><strong>Organized by:</strong> {{ cert.org_name }}</p>
+      <p><strong>Date:</strong> {{ cert.date.strftime("%d %B %Y") }}</p>
+    </div>
+  </body>
+</html>

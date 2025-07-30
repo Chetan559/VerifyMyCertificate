@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Certificates</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      a {
+        text-decoration: none;
+        color: #007bff;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Certificates for Enrollment No: {{ enrollment_no }}</h1>
+
+    {% if certificates %}
+    <table>
+      <tr>
+        <th>Certificate ID</th>
+        <th>Event Name</th>
+        <th>Issue Date</th>
+        <th>Link</th>
+      </tr>
+      {% for cert in certificates %}
+      <tr>
+        <td>{{ cert[0] }}</td>
+        <td>{{ cert[1] }}</td>
+        <td>{{ cert[2] }}</td>
+        <td>
+          <a href="{{ url_for('verify_certificate', cert_id=cert[0]) }}"
+            >View Certificate</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p>No certificates found for this enrollment number.</p>
+    {% endif %}
+  </body>
+</html>
