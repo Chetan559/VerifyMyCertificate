@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: certificate-verifier
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
