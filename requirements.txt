@@ -6,3 +6,4 @@ openpyxl
 qrcode 
 pillow
 dotenv
+gunicorn
